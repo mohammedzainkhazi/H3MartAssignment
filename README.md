@@ -1,3 +1,2 @@
-# Getting Started with Create React App
-
+# H3Mart  Assignment for Internship  
 ## Deployed Link : https://coincapclone.web.app/
