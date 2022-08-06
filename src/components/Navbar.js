@@ -25,6 +25,11 @@ function Navbar() {
                         <button style={{borderRadius:"40px",backgroundColor:"#18C683"}} className="font-bold text-white  mr-0 shadow-lg inline-flex text-center items-center text-sm border-0 py-2 px-5 shadow-lg focus:outline-none ">
                             Connect Wallet
                         </button>
+                        <a target="_blank" href='https://mohammedzainkhazi.web.app'>
+                        <button style={{borderRadius:"40px",backgroundColor:"#1e40af"}} className="font-bold text-white  mr-0 shadow-lg inline-flex text-center items-center text-sm border-0 py-2 px-5 shadow-lg focus:outline-none ">
+                            Developer
+                        </button>
+                        </a>
                     </div>
                 </div>
             </header>
