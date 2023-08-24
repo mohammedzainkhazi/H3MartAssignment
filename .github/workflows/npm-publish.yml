@@ -1,18 +1,30 @@
-name: Build and Deploy
+name: Build and publish
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    tags:
+      - '*'
+  workflow_dispatch:
 
 jobs:
-  build:
-
+  build-and-publish:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v2
 
-    - name: Build and Deploy React app to GitHub Pages
-      uses: omkartapale/react-deployment-gh-pages@v1.0.0
+    - name: Setup node
+      uses: actions/setup-node@v2.1.5
+      with:
+        node-version: 16
+
+    - name: npm ci
+      run: npm ci
+
+    - name: Build
+      run: npm run build
+
+    - name: Publish
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
